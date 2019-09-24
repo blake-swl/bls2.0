@@ -16,12 +16,16 @@ $blue: #6da3d9;
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
 $montserrat:'Montserrat', sans-serif;
 
-@import url('https://fonts.googleapis.com/css?family=Rajdhani&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,700&display=swap');
 $rajdhani: 'Rajdhani', sans-serif;
 
 @import url('https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap');
 $hepta: 'Hepta Slab', serif;
 
+// @font-face {
+//   font-family: 'raj';
+//   src: url(../../../dist/assets/fonts/rajdhani-bold.ttf);
+// }
 // // Background Colors
 @function colorSwap($color) {
   @if (lightness($color) > 60) {

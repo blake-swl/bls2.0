@@ -32,5 +32,8 @@
     "plugins": [
       "@babel/plugin-proposal-class-properties"
     ]
+  },
+  "dependencies": {
+    "gsap": "^2.1.3"
   }
 }

@@ -6,7 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 
 
 // import Loader from '../Loader';
-// import Navbar from '../Navbar';
+import Navbar from '../Navbar';
 // import Menu from '../OverlayMenu'
 // import Works from '../Works';
 // import Services from '../Services';
@@ -18,6 +18,7 @@ const App = () => {
 
   return (
     <div>
+      <Navbar />
       <Home />
       {/* <ScrollToTop>
         <Navbar />

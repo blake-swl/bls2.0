@@ -1,37 +1,71 @@
 @import '../../App/global.scss';
 
+@keyframes mouse {
+  0% {
+    right: 180%;
+    width: 0px;
+  }
+  50% {
+    right: 115%;
+    width: 50px;
+  }
+  100% {
+    width: 0px;    
+  }
+}
 
 .landing {
   background: #1F1F1F;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-}
-.landing__overlay {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 3;
-  background: rgba(0, 0, 0, .6);
-  position: absolute;
+  position: relative;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
 }
+
 .landing__header {
   font: 800 173px/221px $rajdhani;
   text-transform: uppercase;
   position: absolute;
   color: white;
   text-align: center;
-  z-index: 4;
 }
 .landing__rect__svg {
   position: absolute;
-  z-index: 1;
 }
 .landing__hero {
   position: absolute;
-  z-index: 2;
+}
+.landing__overlay {
+  position: absolute;
+}
+.mouse {
+  color: white;
+  z-index: 1;
+  // mix-blend-mode: difference;
+  position: absolute;
+  left: 47%;
+  bottom: 10%;
+  text-transform: uppercase;
+  font: 700 30px/27px $rajdhani;
+  letter-spacing: 5px;
+  
+  .mouse__text {
+    transform: rotate(90deg);
+  }
+  .mouse__text:before {
+    content: '';
+    width: 50px;
+    height: 2px;
+    position: absolute;
+    background: white;
+    animation: mouse 3s infinite cubic-bezier(1,.25,0,.75);
+    opacity: 1;
+    top: 45%;
+    right: 115%;
+
+  }
 }
