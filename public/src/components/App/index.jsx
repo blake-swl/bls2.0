@@ -1,24 +1,25 @@
 import React, {useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ScrollToTop from '../Utils/scrollToTop';
+// import ScrollToTop from '../Utils/scrollToTop';
 
-import withSplashScreen from '../Loader/withSplashScreen';
+// import withSplashScreen from '../Loader/withSplashScreen';
 
 
-import Loader from '../Loader';
-import Navbar from '../Navbar';
-import Menu from '../OverlayMenu'
-import Works from '../Works';
-import Services from '../Services';
-import Contact from '../Contact';
+// import Loader from '../Loader';
+// import Navbar from '../Navbar';
+// import Menu from '../OverlayMenu'
+// import Works from '../Works';
+// import Services from '../Services';
+// import Contact from '../Contact';
 import Home from '../Home';
-import Footer from '../Footer';
+// import Footer from '../Footer';
 
 const App = () => {
 
   return (
     <div>
-      <ScrollToTop>
+      <Home />
+      {/* <ScrollToTop>
         <Navbar />
         <Switch>
           <Route exact path="/" render={props => <Home {...props} />}/>
@@ -26,7 +27,7 @@ const App = () => {
           <Route exact path="/works" render={props => <Works {...props} />}/>
         </Switch>
         <Footer />
-      </ScrollToTop>
+      </ScrollToTop> */}
     </div>
   )
 };

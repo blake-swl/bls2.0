@@ -23,5 +23,14 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9"
+  },
+  "scripts": {
+    "webpack": "webpack -w",
+    "build": "webpack -p"
+  },
+  "babel": {
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
   }
 }
