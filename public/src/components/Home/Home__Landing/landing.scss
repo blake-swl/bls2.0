@@ -39,29 +39,36 @@
   position: absolute;
 }
 .landing__hero {
-  transform: scale(.8);
+  transform: scale(.75);
   position: absolute;
 }
 .landing__overlay {
   position: absolute;
 }
 .landing__cutoff {
-  top: 50%;
+  top: 30%;
   position: absolute;
   display: flex;
   flex-direction: column;
+  transform: scale(.33);
 
   // .bottom {
   //   margin-top: -1%;
   // }
 }
-.typography {
-  position: absolute;
-  left: 15%;
-}
-.palette {
-  position: absolute;
-  right: 15%;
+.landing__parallax {
+  width: 100%;
+  position: relative;
+  visibility: hidden;
+
+  .typography {
+    position: absolute;
+    left: 15%;
+  }
+  .palette {
+    position: absolute;
+    right: 15%;
+  }
 }
 
 .mouse {
@@ -106,13 +113,11 @@
   .landing {
     justify-content: center;
   }
-  // .uncon__top {
-  //   position: absolute;
-  
-
-  // }
-  // .uncon__bottom {
-  //   position: absolute;
-  //   top: 0;
-  // }
+  .landing__cutoff {
+    top: 50%;
+    transform: scale(1);
+  }
+  .landing__parallax {
+    visibility: visible;
+  }
 }
