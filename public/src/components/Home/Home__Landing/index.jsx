@@ -30,13 +30,12 @@ const Landing = () => {
   useEffect(() => {
     let tl = new TimelineMax({ease:  SlowMo.easeIn});
     tl
-    .to(overlay, 1, {opacity: 1, ease: Expo.easeOut})
-    .to(upperText, 2, {opacity: 1})
+    .to(overlay, 1, {opacity: 1, ease: SlowMo.easeOut, delay: .5})
+    // .to(upperText, 2, {opacity: 1})
     
-    TweenMax
-    .to(svgText, 2, {opacity: 1, delay: 1}) 
-    TweenMax
-    .to(pullAwayText, .5, {marginTop: 0, delay: 1})
+    TweenMax.to(upperText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn})
+    TweenMax.to(svgText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn}) 
+    TweenMax.to(pullAwayText, .3, {marginTop: 0, delay: 1})
 
   })
 
