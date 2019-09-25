@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './landing.scss';
+
+import { TweenMax, Circ } from 'gsap';
+
 
 // Assets
 import hero from '../../../../dist/assets/landing__hero.png';
@@ -22,7 +25,12 @@ const Landing = () => {
     }
   }, []);
 
+  let pullAwayText = useRef(null);
 
+  useEffect(() => {
+    TweenMax.to(pullAwayText, .5, {marginTop: 0, ease: Circ.easeInOut}).delay(1)    
+
+  })
 
   return(
     <div className="landing">
@@ -42,7 +50,7 @@ const Landing = () => {
         <img className="typography" src={typography} alt="" style={{ bottom: offset / - 4 }}/>
         <img className="palette" src={palette} alt="" style={{ top: offset / - 8 }}/>
       </div>
-      <img className="landing__hero" src={hero} alt="" style={{ top: offset / - 12 }}/>
+      <img className="landing__hero" src={hero} alt="" style={{ top: offset / - 8 }}/>
       <svg className="landing__overlay" xmlns="http://www.w3.org/2000/svg" width="1920" height={"100%"}>
         <rect id="Rectangle_10" data-name="Rectangle 10" width="1920" height={"100%"} opacity="0.36" fill="#000000"/>
       </svg>
@@ -75,7 +83,7 @@ const Landing = () => {
             <path id="Path_140" data-name="Path 140" d="M1506.522,466.378h-14.7q-3.632,0-3.632,3.633v52.231c4.927.368,9.864.637,14.815.758a34.388,34.388,0,0,0,7.155-.84V470.011Q1510.155,466.378,1506.522,466.378Z" fill="#fff"/>
           </g>
         </svg>
-        <svg className="bottom" xmlns="http://www.w3.org/2000/svg" width="1273.952" height="63.48" viewBox="0 0 1273.952 63.48">
+        <svg ref={element => pullAwayText = element} className="bottom" xmlns="http://www.w3.org/2000/svg" width="1273.952" height="63.48" viewBox="0 0 1273.952 63.48">
           <g id="Group_13" data-name="Group 13" transform="translate(-309.38 -517.137)">
             <path id="Path_141" data-name="Path 141" d="M363.529,551.38q0,5.538-2.336,7.871t-7.871,2.336H341.385q-5.364,0-7.7-2.336t-2.336-7.871V523.362q-10.992-.036-21.971-.1v29.155q0,13.666,7.439,20.933t21.106,7.266h19.03q13.494,0,21.02-7.353t7.525-20.846V523.334q-10.989.045-21.971.059Z" fill="#fff"/>
             <path id="Path_142" data-name="Path 142" d="M407.125,576.984q0,3.633,3.632,3.633h14.359q3.635,0,3.634-3.633V523.069q-10.812.089-21.625.161Z" fill="#fff"/>
