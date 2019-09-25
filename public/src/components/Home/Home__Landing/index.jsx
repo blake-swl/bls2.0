@@ -35,7 +35,7 @@ const Landing = () => {
     
     TweenMax.to(upperText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn})
     TweenMax.to(svgText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn}) 
-    TweenMax.to(pullAwayText, .3, {marginTop: 0, delay: 1})
+    TweenMax.to(pullAwayText, .3, {marginTop: 0, delay: 1, ease:  Expo.easeIn})
 
   })
 

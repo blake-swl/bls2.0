@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Loader from './index';
+import { CSSTransitionGroup } from 'react-transition-group' 
 
 function withSplashScreen(WrappedComponent) {
   return class extends Component {
@@ -9,7 +10,7 @@ function withSplashScreen(WrappedComponent) {
         loading: true,
       };
     }
-
+  
     componentDidMount() {
       try {
         setTimeout(() => {
@@ -26,7 +27,17 @@ function withSplashScreen(WrappedComponent) {
     }
 
     render() {
-      if (this.state.loading) return <Loader/>;
+      if (this.state.loading) return <CSSTransitionGroup transitionName="loader__mount"
+      transitionAppear={true}
+      transitionAppearTimeout={500}
+      transitionLeaveTimeout={500}
+      transitionLeave={true}
+      >
+      {/* transitionEnter={true}
+      transitionEnterTimeout={500} */}
+
+        <Loader/>
+      </CSSTransitionGroup>;
 
       return <WrappedComponent {...this.props} />;
     }

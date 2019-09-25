@@ -19,18 +19,7 @@ $rajdhani: 'Rajdhani', sans-serif;
 @import url('https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap');
 $hepta: 'Hepta Slab', serif;
 
-// @font-face {
-//   font-family: 'raj';
-//   src: url(../../../dist/assets/fonts/rajdhani-bold.ttf);
-// }
-// // Background Colors
-@function colorSwap($color) {
-  @if (lightness($color) > 60) {
-    @return $black; // Lighter background, return dark color
-  } @else {
-    @return $white; // Darker background, return light color
-  }
-}
+
 
 html, body {
   margin: 0;
@@ -39,6 +28,8 @@ html, body {
   max-width: 100%;
   height: auto;
   overflow-x: hidden;
+  background: black;
+  // background: #1F1F1F;
 }
 
 // $landing: 
