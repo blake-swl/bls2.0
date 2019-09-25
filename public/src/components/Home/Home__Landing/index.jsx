@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './landing.scss';
 
-import { TweenMax, Circ } from 'gsap';
+import { TweenMax, TimelineMax, SlowMo } from 'gsap';
 
 
 // Assets
@@ -25,10 +25,16 @@ const Landing = () => {
     }
   }, []);
 
-  let pullAwayText = useRef(null);
+  let pullAwayText = useRef(null), upperText = useRef(null), svgText = useRef(null), heroImage = useRef(null);
 
   useEffect(() => {
-    TweenMax.to(pullAwayText, .5, {marginTop: 0, ease: Circ.easeInOut}).delay(1)    
+    let tl = new TimelineMax({ease:  SlowMo.easeIn});
+    tl.to(upperText, 2, {opacity: 1})
+    .to(pullAwayText, .5, {marginTop: 0})
+    
+    TweenMax
+    .to(svgText, 2, {opacity: 1} )
+    ;    
 
   })
 
@@ -50,15 +56,15 @@ const Landing = () => {
         <img className="typography" src={typography} alt="" style={{ bottom: offset / - 4 }}/>
         <img className="palette" src={palette} alt="" style={{ top: offset / - 8 }}/>
       </div>
-      <img className="landing__hero" src={hero} alt="" style={{ top: offset / - 8 }}/>
+      <img ref={element => heroImage = element} className="landing__hero" src={hero} alt="" style={{ top: offset / - 8 }}/>
       <svg className="landing__overlay" xmlns="http://www.w3.org/2000/svg" width="1920" height={"100%"}>
         <rect id="Rectangle_10" data-name="Rectangle 10" width="1920" height={"100%"} opacity="0.36" fill="#000000"/>
       </svg>
       <div className="mouse">
         <div className="mouse__text">scroll</div>
       </div>
-      <h1 className="landing__header">Bold. beautiful.</h1>
-      <div className="landing__cutoff">
+      <h1 ref={element => upperText = element} className="landing__header">Bold. beautiful.</h1>
+      <div ref={element => svgText = element} className="landing__cutoff">
         <svg className="top" xmlns="http://www.w3.org/2000/svg" width="1200.775" height="56.622" viewBox="0 0 1200.775 56.622">
           <g id="Group_12" data-name="Group 12" transform="translate(-309.38 -466.378)">
             <path id="Path_121" data-name="Path 121" d="M331.351,470.011q0-3.633-3.633-3.633h-14.7q-3.633,0-3.633,3.633v50.252q10.975.075,21.971.1Z" fill="#fff"/>

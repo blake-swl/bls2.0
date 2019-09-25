@@ -2,10 +2,11 @@ import React, {useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 // import ScrollToTop from '../Utils/scrollToTop';
 
-// import withSplashScreen from '../Loader/withSplashScreen';
+// import withSplashScreen from '../Loader/wtihSplashScreen';
+import withSplashScreen from '../Loader/withSplashScreen';
 
 
-// import Loader from '../Loader';
+import Loader from '../Loader';
 import Navbar from '../Navbar';
 // import Menu from '../OverlayMenu'
 // import Works from '../Works';
@@ -18,6 +19,7 @@ const App = () => {
 
   return (
     <div>
+      {/* <Loader /> */}
       <Navbar />
       <Home />
       {/* <ScrollToTop>
@@ -32,6 +34,6 @@ const App = () => {
     </div>
   )
 };
-export default App;
+// export default App;
 
-// export default withSplashScreen(App);
+export default withSplashScreen(App);
