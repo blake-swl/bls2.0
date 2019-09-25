@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/blake-swl/bls2.0.git",
   "author": "blake-swl <seulwoolee93@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "cd public && yarn run build"
+  }
 }
