@@ -3,14 +3,11 @@
 
 // Color Scheme
 $grey: #eeeeee;
-$white: #FEFEF3;
+$white: #FAFAFA;
 $offWhite: #D5D5D5;
 $black: #161D25;
-$gold: #C7A47A;
-$darkGold: #BC994D;
-$darkGrey: #333232;
-$lightGold: #ECD7AB;
-$blue: #6da3d9;
+$darkGrey: #313131;
+
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
@@ -43,7 +40,5 @@ html, body {
   height: 100%;
   overflow-x: hidden;
 }
-h3 {
-  font-family: $hepta;
-}
+
 // $landing: 

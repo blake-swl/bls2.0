@@ -1,0 +1,55 @@
+@import '../../App/global.scss';
+
+.home__works {
+  background: white;
+  width: 100%;
+  padding: 10% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home__works__grid {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+.home__work__content {
+  position: relative;
+  height: fit-content;
+  margin-bottom: 5%;
+  
+  .home__work__title {
+    font: 700 114px $rajdhani;
+    // color: #b1b1b1;
+    color: black;
+    // color: #BEBEBE;
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    left: -10%;
+    opacity: 0;
+    transition: opacity .3s ease-in;
+    // mix-blend-mode: darken;
+  }
+  .home__work__image {
+    width: 700px;
+    height: auto;
+    border: 4px solid $darkGrey;
+    filter: brightness(1) grayscale(1) contrast(1);
+    // box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
+    transition: filter .2s ease-out;
+
+  }
+  &:hover {
+    .home__work__image {
+      filter: brightness(1.5) grayscale(1) contrast(.5); 
+      border-color: #9D0F5C;
+  
+    }
+    .home__work__title {
+      opacity: 1;
+    }
+  }
+}
