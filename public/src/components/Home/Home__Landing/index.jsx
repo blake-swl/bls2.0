@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './landing.scss';
 
-import { TweenMax, TimelineMax, SlowMo } from 'gsap';
+import { TweenMax, TimelineMax, SlowMo, Expo } from 'gsap';
 
 
 // Assets
@@ -25,16 +25,18 @@ const Landing = () => {
     }
   }, []);
 
-  let pullAwayText = useRef(null), upperText = useRef(null), svgText = useRef(null), heroImage = useRef(null);
+  let pullAwayText = useRef(null), upperText = useRef(null), svgText = useRef(null), overlay = useRef(null);
 
   useEffect(() => {
     let tl = new TimelineMax({ease:  SlowMo.easeIn});
-    tl.to(upperText, 2, {opacity: 1})
-    .to(pullAwayText, .5, {marginTop: 0})
+    tl
+    .to(overlay, 1, {opacity: 1, ease: Expo.easeOut})
+    .to(upperText, 2, {opacity: 1})
     
     TweenMax
-    .to(svgText, 2, {opacity: 1} )
-    ;    
+    .to(svgText, 2, {opacity: 1, delay: 1}) 
+    TweenMax
+    .to(pullAwayText, .5, {marginTop: 0, delay: 1})
 
   })
 
@@ -56,8 +58,8 @@ const Landing = () => {
         <img className="typography" src={typography} alt="" style={{ bottom: offset / - 4 }}/>
         <img className="palette" src={palette} alt="" style={{ top: offset / - 8 }}/>
       </div>
-      <img ref={element => heroImage = element} className="landing__hero" src={hero} alt="" style={{ top: offset / - 8 }}/>
-      <svg className="landing__overlay" xmlns="http://www.w3.org/2000/svg" width="1920" height={"100%"}>
+      <img className="landing__hero" src={hero} alt="" style={{ top: offset / - 8 }}/>
+      <svg ref={element => overlay = element} className="landing__overlay" xmlns="http://www.w3.org/2000/svg" width="1920" height={"100%"}>
         <rect id="Rectangle_10" data-name="Rectangle 10" width="1920" height={"100%"} opacity="0.36" fill="#000000"/>
       </svg>
       <div className="mouse">
