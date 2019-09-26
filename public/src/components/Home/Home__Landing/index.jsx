@@ -5,7 +5,7 @@ import { TweenMax, TimelineMax, SlowMo, Expo } from 'gsap';
 
 
 // Assets
-import hero from '../../../../dist/assets/landing__hero4.png';
+import hero from '../../../../dist/assets/landing__hero.png';
 import palette from '../../../../dist/assets/colorPalette.svg';
 import typography from '../../../../dist/assets/typography.svg';
 
