@@ -12,6 +12,7 @@ const Navbar = () => {
 
   return(
     <div className="navbar" >
+      
       <div className="navbar__container">
         <NavLink to="/" className="logo__button">
           <div className="glitch" data-text="ASCEND">ascend</div>
