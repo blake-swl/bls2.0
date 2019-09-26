@@ -1,9 +1,19 @@
 @import '../App/global.scss';
 
+@keyframes noise-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}% 0 #{$bottom}% 0);
+    }
+  }
+}
 // Menu Overlay
 .menuOverlay__container {
   z-index: 11;
-  background: white;
+  background: $black;
   padding: 2em 0;
   width: 100vw;
   height: 100vh;
@@ -13,13 +23,15 @@
   top: 0;
   left: 0;
   transform: translateY(-100%);
+  color: $white;
 
   * {
-    font-family: $montserrat;
+    font-family: $rajdhani;
   }
 
   li {
     display: flex;
+    width: fit-content;
     position: relative;
     padding: 0;
     transition: all .4s cubic-bezier(1,.25,0,.75);
@@ -52,14 +64,15 @@
   line-height: 1.3;
   text-decoration: none;
   transition: all .4s cubic-bezier(1,.25,0,.75);
-  color: $black;
+  color: $white;
+  text-transform: uppercase;
   mix-blend-mode: difference;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(
       to right,
-      $black,
-      $black 50%,
+      #c01c74,
+      #c01c74 50%,
       #eee 50%);
   background-size: 200% 100%;
   background-position: 100%;
@@ -74,10 +87,12 @@
   padding-left: 5%;
 
   &__header {
+    color: $grey;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 8px;
-    transform: rotate(-90deg);
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
     letter-spacing: 3px;
     position: absolute;
     left: -10px;
@@ -99,6 +114,37 @@
     width: fit-content;
   }
 }
+.menu__hero {
+  position: relative;
+	width: 400px;
+	height: 600px;
+}
+.menu__hero::before,
+.menu__hero::after {
+  content: attr(data-img);
+  background: attr(data-img);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.menu__hero::before {
+  left: 2px;
+  box-shadow: -1px 0 red;
+  background: #1F1F1F;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+.menu__hero:after {
+  left: -2px;
+  box-shadow: -1px 0 blue;
+  background: #1F1F1F;
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+
+
 @media only screen and (min-width: 1080px) {
   .menuOverlay__container {
       // width: calc(100vw - 40%);
@@ -112,19 +158,25 @@
     font-size: 75px;
   }
   .menu__container {
+    width: 80%;
+    margin-left: 20%;
     padding-left: 3%;
 
     &__header {
     font-weight: 600;
-    font-size: 12px;
-    left: -22px;
-    top: 40px;
+    font-size: 16px;
+    left: -17px;
+    top: 21px;
     }
   }
   .menu__contacts {
-    height: 43%;
+    // height: 43%;
     padding: 0;
-    width: fit-content;
+    width: 100%;
+  }
+  .menu__hero {
+    width: 400px;
+    height: 600px;
   }
 }
 // text-transform: uppercase;
@@ -135,3 +187,4 @@
 // position: absolute;
 // left: -22px;
 // top: 40px;
+

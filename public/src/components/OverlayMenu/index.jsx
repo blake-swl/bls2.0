@@ -3,6 +3,9 @@ import './overlayMenu.scss';
 import { Link } from "react-router-dom";
 
 
+import skyscape from '../../../dist/assets/skyscape.jpg';
+
+
 import { TweenMax, Circ } from 'gsap';
 
 
@@ -29,6 +32,8 @@ const Menu = (props) => {
         </ul>
       </div>
       <div className="menu__contacts">
+        <img className="menu__hero" src={skyscape} alt="" data-img={skyscape}/>
+
         <div>blakeswl@blstudio.co</div>
         <div>(323)482-0091</div>
       </div>
