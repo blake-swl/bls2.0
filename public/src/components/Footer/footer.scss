@@ -1,0 +1,57 @@
+@import '../App/global.scss';
+
+
+@keyframes noise-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      clip-path: inset(#{$top}% 0 #{$bottom}% 0);
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  // height: 750px;
+  background: #1F1F1F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 4px solid #E5298F;
+  padding: 10% 0 0;
+}
+.footer__glitch {
+  position: relative;
+  text-transform: uppercase;
+  color: $white;
+  font: Bold 120px $rajdhani;
+}
+.footer__glitch::before,
+.footer__glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.footer__glitch::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  background: black;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+.footer__glitch::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  background: black;
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+.footer__subheader {
+  font: 400 50px $rajdhani;
+  color: $white;
+  text-transform: uppercase;
+}

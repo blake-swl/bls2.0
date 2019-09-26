@@ -13,7 +13,7 @@ import Navbar from '../Navbar';
 // import Services from '../Services';
 // import Contact from '../Contact';
 import Home from '../Home';
-// import Footer from '../Footer';
+import Footer from '../Footer';
 
 const App = () => {
 
@@ -22,6 +22,7 @@ const App = () => {
       {/* <Loader /> */}
       <Navbar />
       <Home />
+      <Footer/>
       {/* <ScrollToTop>
         <Navbar />
         <Switch>
@@ -34,6 +35,6 @@ const App = () => {
     </div>
   )
 };
-// export default App;
+export default App;
 
-export default withSplashScreen(App);
+// export default withSplashScreen(App);

@@ -5,7 +5,7 @@ import { TweenMax, TimelineMax, SlowMo, Expo } from 'gsap';
 
 
 // Assets
-import hero from '../../../../dist/assets/landing__hero.png';
+import hero from '../../../../dist/assets/landing__hero4.png';
 import palette from '../../../../dist/assets/colorPalette.svg';
 import typography from '../../../../dist/assets/typography.svg';
 
@@ -64,7 +64,7 @@ const Landing = () => {
       <div className="mouse">
         <div className="mouse__text">scroll</div>
       </div>
-      <h1 ref={element => upperText = element} className="landing__header">Bold. beautiful.</h1>
+      <h1 ref={element => upperText = element} className="landing__header">Bold. creative.</h1>
       <div ref={element => svgText = element} className="landing__cutoff">
         <svg className="top" xmlns="http://www.w3.org/2000/svg" width="1200.775" height="56.622" viewBox="0 0 1200.775 56.622">
           <g id="Group_12" data-name="Group 12" transform="translate(-309.38 -466.378)">
