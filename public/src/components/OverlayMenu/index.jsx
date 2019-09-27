@@ -3,8 +3,6 @@ import './overlayMenu.scss';
 import { Link } from "react-router-dom";
 
 
-import skyscape from '../../../dist/assets/skyscape.jpg';
-
 
 import { TweenMax, Circ } from 'gsap';
 

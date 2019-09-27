@@ -3,7 +3,7 @@ import './transition.scss';
 
 // Assets
 import halloween from '../../../../dist/assets/horror.png';
-import dodgers from '../../../../dist/assets/landing.png';
+import dodgers from '../../../../dist/assets/Landing.png';
 import blog from '../../../../dist/assets/blog.png';
 import ascend from '../../../../dist/assets/Ascend.png';
 
