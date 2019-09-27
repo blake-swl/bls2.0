@@ -1,13 +1,25 @@
 import React from 'react';
 import './transition.scss';
 
+// Assets
+import halloween from '../../../../dist/assets/horror.png';
+import dodgers from '../../../../dist/assets/landing.png';
+import blog from '../../../../dist/assets/blog.png';
+import ascend from '../../../../dist/assets/Ascend.png';
+
+
+
+
 const Transition = () => (
   <div className="home__transition">
-    {/* <svg xmlns="http://www.w3.org/2000/svg" width="3779" height="471" viewBox="0 0 3779 471">
-      <text id="Create._inpire._Ascend." data-name="Create. inpire. Ascend." transform="translate(0 343)" fill="#e8e8e8" font-size="369" font-family="Rajdhani-Bold, Rajdhani" font-weight="700" letter-spacing="0.01em"><tspan x="0" y="0">Create. inpire. Ascend.</tspan></text>
-    </svg> */}
-
     <p className="home__transition__text">create. inspire. ascend</p>
+    <div className="home__transition__images">
+      <div className="transition__img" style={{backgroundImage: `url(${halloween})`}}></div>
+      <div className="transition__img" style={{backgroundImage: `url(${dodgers})`}}></div>
+      <div className="transition__img" style={{backgroundImage: `url(${blog})`}}></div>
+      <div className="transition__img" style={{backgroundImage: `url(${ascend})`}}></div>
+
+    </div>
   </div>
 );
 export default Transition;

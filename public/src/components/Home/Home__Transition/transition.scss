@@ -10,19 +10,42 @@
 }
 .home__transition {
   width: 100vw;
-  height: 50vh;
-  background: url(../../../../dist/assets/scrollText.png.svg);
-  background-color: $black;
-  background-repeat: repeat;
-  background-size: auto;
-  animation: 20s linear infinite slide;
+  background-color: $white;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .home__transition__text {
+  background: url(../../../../dist/assets/scrollText.png.svg);
+  background-repeat: repeat;
+  background-size: auto;
+  animation: 20s linear infinite slide;
+  height: 50vh;
+  width: 100vw;
   font: Bold 80px $rajdhani;
-  color: $white;
+  color: $darkGrey;
   letter-spacing: 3.69px;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home__transition__images {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+.transition__img {
+  height: 80%;
+  width: 768px;
+  background-size: contain;
+  // margin: 0 5%;
+  // background-repeat: no-repeat;
+  filter: brightness(.6);
+  animation: 20s linear infinite slide;
+
+  // background-blend-mode: darken;
+  // background: url
 }

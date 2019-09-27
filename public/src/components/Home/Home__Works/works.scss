@@ -1,7 +1,7 @@
 @import '../../App/global.scss';
 
 .home__works {
-  background: $black;
+  background: $white;
   width: 100%;
   padding: 10% 0;
   display: flex;
@@ -15,10 +15,11 @@
 	// justify-content: center;
   // align-items: center;
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 50%);
   justify-items: center;
+  align-items: center;
   // grid-template-areas: 
   // "work ..."
   // "... work";
@@ -27,25 +28,24 @@
 .home__work__grid {
   display: grid;
   z-index: 0;
-	justify-content: center;
-	align-content: center;
-	grid-template-columns: repeat(4, 200px); 
-	grid-template-rows: repeat(3, 200px);
+	grid-template-columns: repeat(6, 150px); 
+  grid-template-rows: repeat(2, 200px);
+  margin: 10% 0; 
   grid-template-areas:
-              // "... ... ... ..."
               "image3 ... ... ..."
-              "... ... image2 image2";
+              "... ... ... image2";
 }
 .grid__image {
   border: 4px solid $darkGrey;
-  // filter: grayscale(1);
+  // filter: brightness(.6);
+  transition: filter .3s ease-in;
 }
 .grid__image--1 {
   width: 600px;
   height: auto;
   z-index: 2;
-  grid-column: 1 / 2;
-	grid-row: 1 / 3;
+  grid-column: 2 / 3;
+	grid-row: 1 / 2;
 	// opacity: 0.8;
 }
 
@@ -54,12 +54,14 @@
 	grid-area: image2;
 	margin: 0;
   z-index: 3;
-  margin-left: 20%;
+  max-height: 350px;
+  overflow: hidden;
+  // margin-left: 20%;
 }
 .grid__image--3 {
   grid-area: image3;
   width: 300px;
-  margin-left: -40%;
+  // margin-left: -40%;
   margin-top: 50%;
   z-index: 1;
 }
@@ -67,7 +69,19 @@
   filter: none;
   border-color: #9D0F5C;
 }
-
+  .home__work__title {
+    font: 700 114px $rajdhani;
+    // color: #b1b1b1;
+    color: $black;
+    // color: #BEBEBE;
+    text-transform: uppercase;
+    // position: absolute;
+    // top: 50%;
+    // left: -10%;
+    // opacity: 0;
+    transition: opacity .3s ease-in;
+    // mix-blend-mode: darken;
+  }
 
 
 

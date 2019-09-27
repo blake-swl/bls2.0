@@ -7,6 +7,9 @@ import jordanTran from '../../../../dist/assets/jordan.png'
 import spotify from '../../../../dist/assets/spotify.png';
 import horror from '../../../../dist/assets/horror.png';
 import blog from '../../../../dist/assets/blog.png';
+import hike from '../../../../dist/assets/hike-dark1.png';
+import hiker from '../../../../dist/assets/hiker.jpeg';
+
 
 
 const Works = () => {
@@ -17,38 +20,24 @@ const Works = () => {
         <div className="home__work__grid">
           <img className="grid__image grid__image--1" src={jordan} alt=""/>
           <img className="grid__image grid__image--2" src={jordanTran} alt=""/>
-          <img className="grid__image grid__image--3" src={jordanTran} alt=""/>
+          {/* <img className="grid__image grid__image--3" src={jordanTran} alt=""/> */}
         </div>
-        <h3>Jordans</h3>
-        <h3>Halloween horror nights</h3>
+        <h3 className="home__work__title">Jordans</h3>
+        <h3 className="home__work__title">trail finder</h3>
         <div className="home__work__grid">
-          <img className="grid__image grid__image--1" src={horror} alt=""/>
-          <img className="grid__image grid__image--2" src={jordanTran} alt=""/>
-          <img className="grid__image grid__image--3" src={jordanTran} alt=""/>
+          <img className="grid__image grid__image--1" src={hiker} alt=""/>
+          <img className="grid__image grid__image--2" src={hike} alt=""/>
+          {/* <img className="grid__image grid__image--3" src={jordanTran} alt=""/> */}
         </div>
         <div></div>
         <div></div>
         <div className="home__work__grid">
-          <img className="grid__image grid__image--1" src={jordan} alt=""/>
+          <img className="grid__image grid__image--1" src={spotify} alt=""/>
           <img className="grid__image grid__image--2" src={jordanTran} alt=""/>
           <img className="grid__image grid__image--3" src={jordanTran} alt=""/>
         </div>
-        {/* <div className="home__work__content">
-          <img className="home__work__image" src={jordan} alt=""/>
-          <h3 className="home__work__title">Jordans</h3>
-        </div>
-        <div className="home__work__content">
-          <img className="home__work__image" src={spotify} alt=""/>
-          <h3 className="home__work__title">Spotify</h3>
-        </div>
-        <div className="home__work__content">
-          <img className="home__work__image" src={horror} alt=""/>
-          <h3 className="home__work__title">Horror nights</h3>
-        </div>
-        <div className="home__work__content">
-          <img className="home__work__image" src={blog} alt=""/>
-          <h3 className="home__work__title">BDventures</h3>
-        </div> */}
+        <h3 className="home__work__title">spotify</h3>
+
       </div>
     </div>
 
