@@ -19,8 +19,8 @@ const Works = () => {
           <img className="grid__image grid__image--2" src={jordanTran} alt=""/>
           <img className="grid__image grid__image--3" src={jordanTran} alt=""/>
         </div>
-        <div></div>
-        <div></div>
+        <h3>Jordans</h3>
+        <h3>Halloween horror nights</h3>
         <div className="home__work__grid">
           <img className="grid__image grid__image--1" src={horror} alt=""/>
           <img className="grid__image grid__image--2" src={jordanTran} alt=""/>

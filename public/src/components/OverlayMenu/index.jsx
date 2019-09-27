@@ -32,8 +32,17 @@ const Menu = (props) => {
         </ul>
       </div>
       <div className="menu__contacts">
-        <img className="menu__hero" src={skyscape} alt="" data-img={skyscape}/>
+        {/* <img className="menu__hero" src={skyscape} alt="" data-img={skyscape}/> */}
+        <div className="nav__loader__glitch">
+          <div className="glitch__imgloaded">
+            <div className="glitch__hero"></div>
+            <div className="glitch__hero"></div>
+            <div className="glitch__hero"></div>
+            <div className="glitch__hero"></div>
+            <div className="glitch__hero"></div>
+          </div>
 
+        </div>
         <div>blakeswl@blstudio.co</div>
         <div>(323)482-0091</div>
       </div>

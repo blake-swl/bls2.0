@@ -45,7 +45,7 @@ const Landing = () => {
         <defs>
           <linearGradient id="linear-gradient" x1="1.086" y1="0.5" x2="-0.112" y2="0.5" gradientUnits="objectBoundingBox">
             <stop offset="0" stop-color="#8d8d8d"/>
-            <stop offset="1" stop-color="#50045d"/>
+            <stop offset="1" stop-color="#27002C"/>
           </linearGradient>
         </defs>
         <g id="Rectangle_2" data-name="Rectangle 2" stroke="#313131" stroke-width="10" fill="url(#linear-gradient)">
