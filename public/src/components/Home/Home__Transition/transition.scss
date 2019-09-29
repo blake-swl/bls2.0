@@ -1,6 +1,6 @@
 @import '../../App/global.scss';
 
-@keyframes slide {
+@keyframes slide-right {
   from {
     background-position-x: 0;
   }
@@ -8,6 +8,11 @@
     background-position-x: 100%;
   }
 }
+@keyframes slide-left {
+  0% { right: 0; }
+  100% { right: -100%; }
+}
+
 .home__transition {
   width: 100vw;
   background-color: $white;
@@ -20,7 +25,7 @@
   background: url(../../../../dist/assets/scrollText.png.svg);
   background-repeat: repeat;
   background-size: auto;
-  animation: 20s linear infinite slide;
+  animation: 20s linear infinite slide-right;
   height: 50vh;
   width: 100vw;
   font: Bold 80px $rajdhani;
@@ -32,20 +37,33 @@
   align-items: center;
 }
 .home__transition__images {
-  display: flex;
-  width: 100%;
   height: 50vh;
+  width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+
+  &--inner {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    animation: 20s linear infinite slide-left;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
 }
 .transition__img {
-  height: 80%;
-  width: 768px;
+  height: 380px;
+  width: 675px;
   background-size: contain;
-  // margin: 0 5%;
-  // background-repeat: no-repeat;
+  margin: 0 10px;
   filter: brightness(.6);
-  animation: 20s linear infinite slide;
+  transition: all .2s ease-out;
 
-  // background-blend-mode: darken;
-  // background: url
+  &:hover {
+    filter: brightness(1);
+  }
 }
