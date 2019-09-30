@@ -8,6 +8,9 @@ import { TweenMax, TimelineMax, SlowMo, Expo } from 'gsap';
 import hero from '../../../../dist/assets/landing__hero1.png';
 import palette from '../../../../dist/assets/colorPalette.svg';
 import typography from '../../../../dist/assets/typography.svg';
+import screen from '../../../../dist/assets/screen1.svg';
+import mobileOverlay from '../../../../dist/assets/mobile-overlay.svg';
+import screenOverlay from '../../../../dist/assets/landing__overlay.svg';
 
 
 
@@ -25,52 +28,45 @@ const Landing = () => {
     }
   }, []);
 
-  let pullAwayText = useRef(null), upperText = useRef(null), svgText = useRef(null), overlay = useRef(null);
+  let pullAwayText = useRef(null), upperText = useRef(null), svgText = useRef(null), overlay = useRef(null),
+  mobile__overlay = useRef(null);
 
   useEffect(() => {
     let tl = new TimelineMax({ease:  SlowMo.easeIn});
-    tl
-    .to(overlay, 1, {opacity: 1, ease: SlowMo.easeOut, delay: .5})
-    // .to(upperText, 2, {opacity: 1})
+
+   
+    tl.to('.landing__overlay', 1, {opacity: 1, ease: SlowMo.easeOut, delay: .5})
+    // else {
+    //   to(mobile__overlay, 1, {opaciy: 1, ease:  SlowMo.easeOut, delay: .5})
+    // }
     
     TweenMax.to(upperText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn})
     TweenMax.to(svgText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn}) 
     TweenMax.to(pullAwayText, .3, {marginTop: 0, delay: 1, ease:  Expo.easeIn})
 
   })
+  let overlayPicker = () => {
+    return window.screen.width > 500 ? 
+     <img  src={screenOverlay} alt="" className="landing__overlay"/>
+    :
+     <img  src={mobileOverlay} className="landing__overlay" alt=""/>;
+
+    // if (screen.width < 500) {
+    //   console.log('desktop')
+    // } else {
+    //   console.log('mobile')
+    // }
+  }
 
   return(
     <div className="landing">
-      <svg className="landing__rect__svg" width="1488" height="749" viewBox="0 0 1488 749">
-        <defs>
-          <linearGradient id="linear-gradient" x1="1.086" y1="0.5" x2="-0.112" y2="0.5" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="#8d8d8d"/>
-            <stop offset="1" stop-color="#3a0243"/>
-          </linearGradient>
-        </defs>
-        <g id="Rectangle_2" data-name="Rectangle 2" stroke="#313131" stroke-width="10" fill="url(#linear-gradient)">
-          <rect width="1488" height="749" rx="30" stroke="none"/>
-          <rect x="5" y="5" width="1478" height="739" rx="25" fill="none"/>
-        </g>
-      </svg>
+      <img src={screen} className="landing__rect__svg" alt=""/>
       <div className="landing__parallax">
         <img className="typography" src={typography} alt="" style={{ bottom: offset / - 4 }}/>
         <img className="palette" src={palette} alt="" style={{ top: offset / - 8 }}/>
       </div>
       <img className="landing__hero" src={hero} alt="" style={{ top: offset / - 8 }}/>
-      <svg ref={element => overlay = element} className="landing__overlay" width="375" height="812" viewBox="0 0 375 812">
-        <defs>
-          <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-            <stop offset="0.709" stop-color="#0a0a0a"/>
-            <stop offset="1"/>
-          </linearGradient>
-        </defs>
-        <path id="mobile-overlay" d="M0,0H375V812H0Z" opacity="0.798" fill="url(#linear-gradient)"/>
-      </svg>
-      {/* <svg ref={element => overlay = element} className="landing__overlay" xmlns="http://www.w3.org/2000/svg" width="1920" height={"100%"}>
-        <rect id="Rectangle_10" data-name="Rectangle 10" width="1920" height={"100%"} opacity="0.36" fill="#000000"/>
-      </svg> */}
+      {overlayPicker()}
       <div className="mouse">
         <div className="mouse__text">scroll</div>
       </div>
