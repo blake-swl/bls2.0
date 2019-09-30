@@ -41,16 +41,16 @@ const Landing = () => {
 
   return(
     <div className="landing">
-      <svg className="landing__rect__svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="1592" height="749" viewBox="0 0 1592 749">
+      <svg className="landing__rect__svg" width="1488" height="749" viewBox="0 0 1488 749">
         <defs>
           <linearGradient id="linear-gradient" x1="1.086" y1="0.5" x2="-0.112" y2="0.5" gradientUnits="objectBoundingBox">
             <stop offset="0" stop-color="#8d8d8d"/>
-            <stop offset="1" stop-color="#27002C"/>
+            <stop offset="1" stop-color="#3a0243"/>
           </linearGradient>
         </defs>
         <g id="Rectangle_2" data-name="Rectangle 2" stroke="#313131" stroke-width="10" fill="url(#linear-gradient)">
-          <rect width="1592" height="749" rx="30" stroke="none"/>
-          <rect x="5" y="5" width="1582" height="739" rx="25" fill="none"/>
+          <rect width="1488" height="749" rx="30" stroke="none"/>
+          <rect x="5" y="5" width="1478" height="739" rx="25" fill="none"/>
         </g>
       </svg>
       <div className="landing__parallax">
@@ -58,9 +58,19 @@ const Landing = () => {
         <img className="palette" src={palette} alt="" style={{ top: offset / - 8 }}/>
       </div>
       <img className="landing__hero" src={hero} alt="" style={{ top: offset / - 8 }}/>
-      <svg ref={element => overlay = element} className="landing__overlay" xmlns="http://www.w3.org/2000/svg" width="1920" height={"100%"}>
-        <rect id="Rectangle_10" data-name="Rectangle 10" width="1920" height={"100%"} opacity="0.36" fill="#000000"/>
+      <svg ref={element => overlay = element} className="landing__overlay" width="375" height="812" viewBox="0 0 375 812">
+        <defs>
+          <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+            <stop offset="0.709" stop-color="#0a0a0a"/>
+            <stop offset="1"/>
+          </linearGradient>
+        </defs>
+        <path id="mobile-overlay" d="M0,0H375V812H0Z" opacity="0.798" fill="url(#linear-gradient)"/>
       </svg>
+      {/* <svg ref={element => overlay = element} className="landing__overlay" xmlns="http://www.w3.org/2000/svg" width="1920" height={"100%"}>
+        <rect id="Rectangle_10" data-name="Rectangle 10" width="1920" height={"100%"} opacity="0.36" fill="#000000"/>
+      </svg> */}
       <div className="mouse">
         <div className="mouse__text">scroll</div>
       </div>
@@ -114,6 +124,7 @@ const Landing = () => {
           </g>
         </svg>
       </div>
+      <p className="landing__tagline">A creative web development studio.</p>
     </div>
   )
 }
