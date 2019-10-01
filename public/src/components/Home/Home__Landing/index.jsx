@@ -36,9 +36,6 @@ const Landing = () => {
 
    
     tl.to('.landing__overlay', 1, {opacity: 1, ease: SlowMo.easeOut, delay: .5})
-    // else {
-    //   to(mobile__overlay, 1, {opaciy: 1, ease:  SlowMo.easeOut, delay: .5})
-    // }
     
     TweenMax.to(upperText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn})
     TweenMax.to(svgText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn}) 
@@ -50,12 +47,6 @@ const Landing = () => {
      <img  src={screenOverlay} alt="" className="landing__overlay"/>
     :
      <img  src={mobileOverlay} className="landing__overlay" alt=""/>;
-
-    // if (screen.width < 500) {
-    //   console.log('desktop')
-    // } else {
-    //   console.log('mobile')
-    // }
   }
 
   return(

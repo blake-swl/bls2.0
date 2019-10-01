@@ -2,9 +2,9 @@
   <defs>
     <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-      <stop offset="0.707" stop-color="#0a0a0a"/>
+      <stop offset="0.637" stop-color="#0a0a0a"/>
       <stop offset="1"/>
     </linearGradient>
   </defs>
-  <path id="mobile-overlay" d="M0,0H480V812H0Z" opacity="0.804" fill="url(#linear-gradient)"/>
+  <path id="mobile-overlay" d="M0,0H480V812H0Z" opacity="0.496" fill="url(#linear-gradient)"/>
 </svg>

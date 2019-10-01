@@ -120,20 +120,17 @@
 @media only screen and (min-width: 400px) {
   .landing__header {
     font-size: 55px;
-    padding-top: 110%;
+    padding-top: 120%;
   }
   .landing__hero {
     transform: scale(.5) translateY(-35%);
   }
   .landing__cutoff {
-    top: 59%;
+    top: 64%;
     transform: scale(.3);
   }
   .landing__tagline {
-    bottom: 25%;
-  }
-  .mouse {
-    bottom: 10%;
+    bottom: 20%;
   }
 }
 @media only screen and (min-width: 1080px) {

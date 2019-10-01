@@ -2,29 +2,78 @@
 
 .home__works {
   background: $white;
-  width: 100%;
-  padding: 10% 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.home__works__layout {
-	position: relative;
-	// display: flex;
-	// flex-direction: column;
-	// justify-content: center;
-  // align-items: center;
+  max-width: 80%;
   margin: 0 auto;
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  justify-items: center;
-  align-items: center;
-  // grid-template-areas: 
-  // "work ..."
-  // "... work";
-	// height: 100vh;
+  padding: 3em 1em;
+  text-transform: uppercase;
 }
+$min-width: 15rem;
+
+// 1. Add horizontal and vertical spacing between items.
+// 2. Add vertical spacing between rows.
+// 3. Make the order of image / text alternate.
+// 4. Take all the available space.
+// 5. Require at least this amount of space or wrap.
+// 6. Prevent images from sticking to the right in single column mode.
+// 7. (Try to) take as much space as the content needs.
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: -1em; // 1
+  margin-left: -3.5em; // 1
+  align-items: center;
+  
+  &:not(:first-of-type) {
+    margin-top: 3em; // 2
+  }
+  
+  &:nth-child(odd) {
+    flex-direction: row-reverse; // 3
+  }
+  
+  &__item {
+    padding-top: 1em; // 1
+    padding-left: 3.5em; // 1
+    
+    &--body {
+      flex-grow: 9999; // 4
+      flex-basis: $min-width; // 5
+    }
+    
+    &--figure {
+      margin-right: auto; // 6
+      flex-grow: 1; // 7
+
+      // By using `max-content` we can get a little
+      // nicer responsive behavior because the image
+      // automatically shrinks if not enough space is
+      // available, but also the column is not getting
+      // to large than the image if a lot of space
+      // is available.
+      @supports (max-width: max-content) {
+        min-width: $min-width; // 5
+        max-width: max-content;
+        flex-basis: $min-width; // 5
+        flex-grow: 99999;
+      }
+    }
+  }
+}
+// .home__works {
+//   // width: 100%;
+//   // padding: 10% 0;
+//   // display: flex;
+//   // flex-direction: column;
+//   // justify-content: center;
+// }
+// .works__button {
+//   border: 4px solid $black;
+//   background: none;
+//   padding: 5px 10px;
+//   font-size: 40px;
+//   text-transform: uppercase;
+
+// }
 .home__work__grid {
   display: grid;
   z-index: 0;
@@ -65,66 +114,55 @@
   margin-top: 50%;
   z-index: 1;
 }
-.grid__image:hover {
-  filter: none;
-  border-color: #9D0F5C;
+// .grid__image:hover {
+//   filter: none;
+//   border-color: #9D0F5C;
+// }
+.home__work__title {
+  font: 700 114px $rajdhani;
+  text-align: center;
+  // color: #b1b1b1;
+  color: $black;
+  // color: #BEBEBE;
+  // position: absolute;
+  // top: 50%;
+  // left: -10%;
+  // opacity: 0;
+  transition: opacity .3s ease-in;
+  // mix-blend-mode: darken;
 }
-  .home__work__title {
-    font: 700 114px $rajdhani;
-    // color: #b1b1b1;
-    color: $black;
-    // color: #BEBEBE;
-    text-transform: uppercase;
-    // position: absolute;
-    // top: 50%;
-    // left: -10%;
-    // opacity: 0;
-    transition: opacity .3s ease-in;
-    // mix-blend-mode: darken;
-  }
 
+// $min-width: 15rem;
 
-
-
-
-
-
-// .home__work__content {
-//   position: relative;
-//   height: fit-content;
-//   margin-bottom: 5%;
+// .layout {
+//   display: flex;
+//   flex-wrap: wrap;
+//   margin-top: -1em; // 1
+//   margin-left: -3.5em; // 1
+//   align-items: center;
+//   justify-content: center;
   
-//   .home__work__title {
-//     font: 700 114px $rajdhani;
-//     // color: #b1b1b1;
-//     color: black;
-//     // color: #BEBEBE;
-//     position: absolute;
-//     text-transform: uppercase;
-//     top: 50%;
-//     left: -10%;
-//     opacity: 0;
-//     transition: opacity .3s ease-in;
-//     // mix-blend-mode: darken;
-//   }
-//   .home__work__image {
-//     width: 700px;
-//     height: auto;
-//     border: 4px solid $darkGrey;
-//     filter: brightness(1) grayscale(1) contrast(1);
-//     // box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
-//     transition: filter .2s ease-out;
-
-//   }
-//   &:hover {
-//     .home__work__image {
-//       filter: none;
-//       // filter: brightness(1.5) grayscale(1) contrast(.5); 
-//       border-color: #9D0F5C;
+//   // &:not(:first-of-type) {
+//   //   margin-top: 3em; // 2
+//   // }
   
-//     }
-//     .home__work__title {
-//       opacity: 1;
+//   &:nth-child(odd) {
+//     flex-direction: row-reverse; // 3
+//   }
+  
+//   &__item {
+//     // padding-top: 1em; // 1
+//     // padding-left: 3.5em; // 1
+    
+//     &--body {
+//       flex-grow: 9999; // 4
+//       flex-basis: $min-width; // 5
+//       align-items: center;
 //     }
 //   }
 // }
+
+
+
+
+
