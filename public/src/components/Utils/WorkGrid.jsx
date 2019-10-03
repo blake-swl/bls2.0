@@ -1,5 +1,5 @@
 import React from 'react';
-import './workGrid.scss';
+import './styles/workGrid.scss';
 
 const WorkGrid = (props) => (
   <div className="work__grid">

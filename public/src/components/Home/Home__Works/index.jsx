@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import './works.scss';
 
 import WorkGrid from '../../Utils/WorkGrid';
+import Button from '../../Utils/Button';
 
 // Assets
 import jordan from '../../../../dist/assets/jordans.png';
@@ -31,8 +32,8 @@ const Works = () => {
     <div className="home__works">
       <div className="layout">
         <div className="layout__item layout__item--body">
-          <h2 className="home__work__title">Jordans</h2>
-          <a className="works__button">View</a>
+          <h2 className="home__work__title">nike</h2>
+          <Button buttonText="View project" />
         </div>
         <div className="layout__item--figure">
           <WorkGrid image1={jordan} image2={jordanTran} image3={jordanTran} />
@@ -41,7 +42,7 @@ const Works = () => {
       <div className="layout">
         <div className="layout__item layout__item--body">
           <h2 className="home__work__title">trail finder</h2>
-          <a href="" className="works__button">View</a>
+          <Button buttonText="View project" />
         </div>
         <div className="layout__item--figure">
           <WorkGrid image1={hiker} image2={hike} />
@@ -50,7 +51,7 @@ const Works = () => {
       <div className="layout">
         <div className="layout__item layout__item--body">
           <h2 className="home__work__title">spotify</h2>
-          <a href="" className="works__button">View</a>
+          <Button buttonText="View project" />
         </div>
         <div className="layout__item--figure">
           <WorkGrid image1={spotify} image2={jordanTran} />
