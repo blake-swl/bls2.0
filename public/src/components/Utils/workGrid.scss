@@ -1,7 +1,6 @@
 @import '../App/global.scss';
 
 .work__grid {
-  // transform: scale(.3);
   position: relative;
   display: grid;
   z-index: 0;
@@ -13,7 +12,6 @@
               ". . . . . image2";
 }
 .grid__image {
-  // transform: scale(.3);
   border: 4px solid $darkGrey;
   transition: filter .3s ease-in;
 }
@@ -44,23 +42,16 @@
   .work__grid {
     grid-template-columns: repeat(6, 100px); 
     grid-template-rows: repeat(2, 200px);
-  
-    transform: none;
   }
-  .grid__image {
-    transform: none;
-  }
+
   .grid__image--1 {
     width: 600px;
-    transform: none;
   }
   .grid__image--2 {
     width: 200px;
-    transform: none;
   }
 
   .grid__image--3 {
     width: 250px;
-    transform: none;
   }
 }

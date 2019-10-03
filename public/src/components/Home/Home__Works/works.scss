@@ -12,9 +12,9 @@
 }
 .layout {
   width: 95%;
+  height: 80vh;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   flex-direction: column-reverse;
 
@@ -23,6 +23,10 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+
+    &--body {
+      padding-top: 20%;
+    }
   }
   &__item--figure {
     width: 100%;
@@ -35,7 +39,19 @@
   font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    background: $black;
+  }
+  &:hover {
+    left: 100%;
+  }
 }
 .home__work__title {
   font: 700 50px $rajdhani;
@@ -48,6 +64,11 @@
   .layout {
     max-width: 80%;
     flex-direction: row;
+    justify-content: space-between;
+
+    &__item--body {
+      padding-top: 0;
+    }
 
     &:nth-child(odd) {
       flex-direction: row-reverse; // 3
