@@ -16,30 +16,34 @@ import screenOverlay from '../../../../dist/assets/landing__overlay.svg';
 
 const Landing = () => {
   const [offset, shiftOffset] = useState(0);
-  
-  
-  useEffect(() => {
-    const parallaxShift = () => shiftOffset(window.scrollY)
-    window.addEventListener('scroll', parallaxShift);
-    
-    
-    return () => {
-      window.removeEventListener('scroll', parallaxShift)
-    }
-  }, []);
+  const parallaxShift = () => shiftOffset(window.scrollY);
 
-  let pullAwayText = useRef(null), upperText = useRef(null), svgText = useRef(null), overlay = useRef(null),
-  mobile__overlay = useRef(null);
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      window.addEventListener('scroll', parallaxShift);
+    })
+  }, [])
+  
+  
+  // useEffect(() => {
+  //   const parallaxShift = () => shiftOffset(window.scrollY)
+  //   window.addEventListener('scroll', parallaxShift);
+    
+    
+  //   return () => {
+  //     window.removeEventListener('scroll', parallaxShift)
+  //   }
+  // }, []);
+
 
   useEffect(() => {
     let tl = new TimelineMax({ease:  SlowMo.easeIn});
 
-   
     tl.to('.landing__overlay', 1, {opacity: 1, ease: SlowMo.easeOut, delay: .5})
     
-    TweenMax.to(upperText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn})
-    TweenMax.to(svgText, .5, {opacity: 1, delay: .5, ease:  Expo.easeIn}) 
-    TweenMax.to(pullAwayText, .3, {marginTop: 0, delay: 1, ease:  Expo.easeIn})
+    TweenMax.to('.landing__header', .5, {opacity: 1, delay: .5, ease:  Expo.easeIn})
+    TweenMax.to('.landing__cutoff', .5, {opacity: 1, delay: .5, ease:  Expo.easeIn}) 
+    TweenMax.to('.bottom', .3, {marginTop: 0, delay: 1, ease:  Expo.easeIn})
 
   })
   let overlayPicker = () => {
@@ -56,13 +60,13 @@ const Landing = () => {
         <img className="typography" src={typography} alt="" style={{ bottom: offset / - 4 }}/>
         <img className="palette" src={palette} alt="" style={{ top: offset / - 8 }}/>
       </div>
-      <img className="landing__hero" src={hero} alt="" style={{ top: offset / - 8 }}/>
+      <img className="landing__hero" src={hero} alt="" style={{ top: offset /  12 }}/>
       {overlayPicker()}
       <div className="mouse">
         <div className="mouse__text">scroll</div>
       </div>
-      <h1 ref={element => upperText = element} className="landing__header">Bold. creative.</h1>
-      <div ref={element => svgText = element} className="landing__cutoff">
+      <h1 className="landing__header">Bold. creative.</h1>
+      <div className="landing__cutoff">
         <svg className="top" xmlns="http://www.w3.org/2000/svg" width="1200.775" height="56.622" viewBox="0 0 1200.775 56.622">
           <g id="Group_12" data-name="Group 12" transform="translate(-309.38 -466.378)">
             <path id="Path_121" data-name="Path 121" d="M331.351,470.011q0-3.633-3.633-3.633h-14.7q-3.633,0-3.633,3.633v50.252q10.975.075,21.971.1Z" fill="#eeeeee"/>
@@ -87,7 +91,7 @@ const Landing = () => {
             <path id="Path_140" data-name="Path 140" d="M1506.522,466.378h-14.7q-3.632,0-3.632,3.633v52.231c4.927.368,9.864.637,14.815.758a34.388,34.388,0,0,0,7.155-.84V470.011Q1510.155,466.378,1506.522,466.378Z" fill="#eeeeee"/>
           </g>
         </svg>
-        <svg ref={element => pullAwayText = element} className="bottom" xmlns="http://www.w3.org/2000/svg" width="1273.952" height="63.48" viewBox="0 0 1273.952 63.48">
+        <svg className="bottom" xmlns="http://www.w3.org/2000/svg" width="1273.952" height="63.48" viewBox="0 0 1273.952 63.48">
           <g id="Group_13" data-name="Group 13" transform="translate(-309.38 -517.137)">
             <path id="Path_141" data-name="Path 141" d="M363.529,551.38q0,5.538-2.336,7.871t-7.871,2.336H341.385q-5.364,0-7.7-2.336t-2.336-7.871V523.362q-10.992-.036-21.971-.1v29.155q0,13.666,7.439,20.933t21.106,7.266h19.03q13.494,0,21.02-7.353t7.525-20.846V523.334q-10.989.045-21.971.059Z" fill="#eeeeee"/>
             <path id="Path_142" data-name="Path 142" d="M407.125,576.984q0,3.633,3.632,3.633h14.359q3.635,0,3.634-3.633V523.069q-10.812.089-21.625.161Z" fill="#eeeeee"/>
