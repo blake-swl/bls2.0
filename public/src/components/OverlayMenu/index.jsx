@@ -42,7 +42,8 @@ const Menu = (props) => {
             </div>
           </div>
           <div>blakeswl@blstudio.co</div>
-          <div>(323)482-0091</div>
+          <div>danieljoonkimm@gmail.com</div>
+          {/* <div>(323)482-0091</div> */}
         </div>
 
       </div>
