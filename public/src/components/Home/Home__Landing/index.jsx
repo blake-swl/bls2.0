@@ -54,7 +54,7 @@ const Landing = () => {
         <img className="typography" src={typography} alt="" style={{transform: `translateY(${paraPos.img1}px)`}}/>
         <img className="palette" src={palette} alt="" style={{transform: `translateY(${paraPos.img2}px)`}}/>
       </div>
-      <img className="landing__hero" src={hero} alt="" style={{transform: `translateY(${paraPos.img3}px)`}}/>
+      <img className="landing__hero" src={hero} alt="" style={{top: offset / 12}}/>
       {overlayPicker()}
       <div className="mouse">
         <div className="mouse__text">scroll</div>

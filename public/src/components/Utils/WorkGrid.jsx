@@ -12,9 +12,9 @@ const WorkGrid = (props) => {
   }
   return (
     <div className="work__grid">
-      <img src={props.image1} alt="" className="grid__image grid__image--1" style={{transform: `translateY(${paraCoor.img1}px)`}}/>
-      <img src={props.image2} alt="" className="grid__image grid__image--2" style={{transform: `translateY(${paraCoor.img2}px)`}}/>
-      <img src={props.image3} alt="" className="grid__image grid__image--3" style={{transform: `translateY(${paraCoor.img3}px)`}}/>
+      <img src={props.image1} alt="" className="grid__image grid__image--1" data-parallax="-1" style={{transform: `translateY(${paraCoor.img1}px)`}}/>
+      <img src={props.image2} alt="" className="grid__image grid__image--2" data-parallax="-2" style={{transform: `translateY(${paraCoor.img2}px)`}}/>
+      <img src={props.image3} alt="" className="grid__image grid__image--3" data-parallax="1" style={{transform: `translateY(${paraCoor.img3}px)`}}/>
     </div>
   )
 };
