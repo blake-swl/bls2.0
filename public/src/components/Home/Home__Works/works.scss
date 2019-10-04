@@ -1,7 +1,10 @@
 @import '../../App/global.scss';
 
 .home__works {
-  background: $white;
+  background: 
+    linear-gradient(90deg, $grey 2px, transparent 2px);
+  background-size: calc(100vw/6);
+  background-color: white;
   max-width: 100%;
   padding: 3em 1em;
   font-family: $rajdhani;
@@ -12,7 +15,7 @@
 }
 .layout {
   width: 95%;
-  height: 80vh;
+  height: 100vh;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -40,6 +43,10 @@
   transition: opacity .3s ease-in;
   text-transform: lowercase;
   line-height: 1.6;
+
+  &::selection {
+    background: $pink;
+  }
 }
 
 @media only screen and (min-width: 1080px) {

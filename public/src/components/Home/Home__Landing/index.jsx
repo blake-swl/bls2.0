@@ -14,27 +14,21 @@ import screenOverlay from '../../../../dist/assets/landing__overlay.svg';
 
 
 
+
 const Landing = () => {
   const [offset, shiftOffset] = useState(0);
   const parallaxShift = () => shiftOffset(window.scrollY);
+  let paraPos = {
+    img1: (offset / 4),
+    img2: (offset / - 8),
+    img3: (offset / 12)
+  }
 
   useEffect(() => {
     requestAnimationFrame(() => {
       window.addEventListener('scroll', parallaxShift);
     })
   }, [])
-  
-  
-  // useEffect(() => {
-  //   const parallaxShift = () => shiftOffset(window.scrollY)
-  //   window.addEventListener('scroll', parallaxShift);
-    
-    
-  //   return () => {
-  //     window.removeEventListener('scroll', parallaxShift)
-  //   }
-  // }, []);
-
 
   useEffect(() => {
     let tl = new TimelineMax({ease:  SlowMo.easeIn});
@@ -46,7 +40,7 @@ const Landing = () => {
     TweenMax.to('.bottom', .3, {marginTop: 0, delay: 1, ease:  Expo.easeIn})
 
   })
-  let overlayPicker = () => {
+  const overlayPicker = () => {
     return window.screen.width > 500 ? 
      <img  src={screenOverlay} alt="" className="landing__overlay"/>
     :
@@ -57,10 +51,10 @@ const Landing = () => {
     <div className="landing">
       <img src={screen} className="landing__rect__svg" alt=""/>
       <div className="landing__parallax">
-        <img className="typography" src={typography} alt="" style={{ bottom: offset / - 4 }}/>
-        <img className="palette" src={palette} alt="" style={{ top: offset / - 8 }}/>
+        <img className="typography" src={typography} alt="" style={{transform: `translateY(${paraPos.img1}px)`}}/>
+        <img className="palette" src={palette} alt="" style={{transform: `translateY(${paraPos.img2}px)`}}/>
       </div>
-      <img className="landing__hero" src={hero} alt="" style={{ top: offset /  12 }}/>
+      <img className="landing__hero" src={hero} alt="" style={{transform: `translateY(${paraPos.img3}px)`}}/>
       {overlayPicker()}
       <div className="mouse">
         <div className="mouse__text">scroll</div>
