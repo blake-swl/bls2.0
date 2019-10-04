@@ -2,7 +2,6 @@ import React, {useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 // import ScrollToTop from '../Utils/scrollToTop';
 
-// import withSplashScreen from '../Loader/wtihSplashScreen';
 import withSplashScreen from '../Loader/withSplashScreen';
 
 
@@ -35,6 +34,6 @@ const App = () => {
     </div>
   )
 };
-// export default App;
+export default App;
 
-export default withSplashScreen(App);
+// export default withSplashScreen(App);

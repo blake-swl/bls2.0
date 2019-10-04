@@ -15,7 +15,6 @@
 }
 
 .landing {
-  // background: #1F1F1F;
   background: black;
   display: flex;
   flex-direction: column;
@@ -32,13 +31,11 @@
 
 .landing__header {
   font-size: 50px;
-  // 55
   text-transform: uppercase;
   position: absolute;
   color: $grey;
   text-align: center;
   padding-top: 90%;
-  // 120
   opacity: 0;
 }
 .landing__tagline {

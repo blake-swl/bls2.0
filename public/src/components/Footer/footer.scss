@@ -20,13 +20,15 @@
   flex-direction: column;
   border-top: 4px solid #E5298F;
   padding: 5% 0;
+  font-family: $rajdhani;
 }
 .footer__glitch {
   position: relative;
   text-transform: uppercase;
   color: $white;
   text-align: center;
-  font: Bold 120px $rajdhani;
+  font-size: 80px;
+  font-weight: 700;
 }
 .footer__glitch::before,
 .footer__glitch::after {
@@ -51,7 +53,7 @@
   animation: noise-anim 2s infinite linear alternate-reverse;
 }
 .footer__subheader {
-  font: 400 30px $rajdhani;
+  font-size: 20px;
   color: $white;
   text-transform: uppercase;
   opacity: .8;
@@ -63,7 +65,7 @@
   font: 500 30px $rajdhani;
   border-top: $grey 2px solid;
   flex-direction: column;
-
+  align-items: center;
   opacity: .6;
   padding-top: 3%;
   
@@ -103,6 +105,9 @@
 @media only screen and (min-width: 1080px) {
   .footer {
     align-items: center;
+  }
+  .footer__glitch {
+    font-size: 120px;
   }
   .footer__subheader {
     padding: 0;

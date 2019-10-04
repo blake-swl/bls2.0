@@ -3,6 +3,7 @@ import './works.scss';
 
 import WorkGrid from '../../Utils/WorkGrid';
 import Button from '../../Utils/Button';
+import Parallax from '../../Utils/ParallaxAnimation';
 
 // Assets
 import jordan from '../../../../dist/assets/jordans.png';
@@ -29,11 +30,14 @@ const Works = () => {
     })
   }, [])
 
+  useEffect(() => {
+    Parallax('parallax')
+  })
 
   return(
     <div className="home__works">
       <div className="layout">
-        <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 12}px)`}}>
+        <div className="parallax layout__item layout__item--body" data-parallax="-3">
           <h2 className="home__work__title">nike</h2>
           <Button buttonText="View project" />
         </div>
@@ -42,7 +46,7 @@ const Works = () => {
         </div>
       </div>
       <div className="layout">
-        <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 12}px)`}}>
+        <div className="parallax layout__item layout__item--body" data-parallax="-3">
           <h2 className="home__work__title">trail finder</h2>
           <Button buttonText="View project" />
         </div>
@@ -51,7 +55,7 @@ const Works = () => {
         </div>
       </div>
       <div className="layout">
-        <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 12}px)`}}>
+        <div className="parallax layout__item layout__item--body" data-parallax="-3">
           <h2 className="home__work__title">spotify</h2>
           <Button buttonText="View project" />
         </div>
