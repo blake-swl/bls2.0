@@ -1,6 +1,8 @@
 @import '../../App/global.scss';
 
 .home__works {
+  position: relative;
+  // height: 3240px;
   background: 
     linear-gradient(90deg, $grey 2px, transparent 2px);
   background-size: calc(100vw/6);
@@ -14,6 +16,7 @@
   align-items: center;
 }
 .layout {
+  position: relative;
   width: 95%;
   height: 100vh;
   margin: 0 auto;

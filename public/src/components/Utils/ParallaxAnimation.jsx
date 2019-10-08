@@ -1,5 +1,4 @@
 
-
 export default function Parallax(className) {
   let elements = [];
   let screenHeight, animationId, isAnimating;
@@ -46,6 +45,7 @@ export default function Parallax(className) {
       isAnimating = true;
       elements.forEach(({ el, originalTop, height, speed }) => {
         const { top: newTop } = el.getBoundingClientRect();
+        console.log(el.getBoundingClientRect())
         let translate;
         if (screenHeight >= originalTop) {
           translate = Math.floor((window.scrollY / speed) * -1);

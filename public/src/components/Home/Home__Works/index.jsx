@@ -3,7 +3,6 @@ import './works.scss';
 
 import WorkGrid from '../../Utils/WorkGrid';
 import Button from '../../Utils/Button';
-import Parallax from '../../Utils/ParallaxAnimation';
 
 // Assets
 import jordan from '../../../../dist/assets/jordans.png';
@@ -23,21 +22,25 @@ import hiker from '../../../../dist/assets/hiker.jpeg';
 const Works = () => {
   const [offset, shiftOffset] = useState(0);
   const parallaxShift = () => shiftOffset(window.scrollY)
+  let speed
   
+  const handleScroll = () => {
+    const pageTop = window.scrollY;
+    const newTop = (top - (pageTop * speed))
+  }
   useEffect(() => {
     requestAnimationFrame(() => {
       window.addEventListener('scroll', parallaxShift);
+
+      return () => removeEventListener('scroll', parallaxShift)
     })
   }, [])
 
-  useEffect(() => {
-    Parallax('parallax')
-  })
 
   return(
     <div className="home__works">
       <div className="layout">
-        <div className="parallax layout__item layout__item--body" data-parallax="-3">
+        <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 6}px)`}}>
           <h2 className="home__work__title">nike</h2>
           <Button buttonText="View project" />
         </div>
@@ -46,7 +49,7 @@ const Works = () => {
         </div>
       </div>
       <div className="layout">
-        <div className="parallax layout__item layout__item--body" data-parallax="-3">
+        <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 12}px)`}}>
           <h2 className="home__work__title">trail finder</h2>
           <Button buttonText="View project" />
         </div>
@@ -55,7 +58,7 @@ const Works = () => {
         </div>
       </div>
       <div className="layout">
-        <div className="parallax layout__item layout__item--body" data-parallax="-3">
+        <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 18}px)`}}>
           <h2 className="home__work__title">spotify</h2>
           <Button buttonText="View project" />
         </div>
