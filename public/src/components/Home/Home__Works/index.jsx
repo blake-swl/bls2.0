@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './works.scss';
+import scrollMonitor from 'scrollmonitor';
 
 import WorkGrid from '../../Utils/WorkGrid';
 import Button from '../../Utils/Button';
@@ -22,23 +23,35 @@ import hiker from '../../../../dist/assets/hiker.jpeg';
 const Works = () => {
   const [offset, shiftOffset] = useState(0);
   const parallaxShift = () => shiftOffset(window.scrollY)
-  let speed
+  let workContainer = useRef(null);
   
-  const handleScroll = () => {
-    const pageTop = window.scrollY;
-    const newTop = (top - (pageTop * speed))
-  }
-  useEffect(() => {
-    requestAnimationFrame(() => {
-      window.addEventListener('scroll', parallaxShift);
 
-      return () => removeEventListener('scroll', parallaxShift)
+
+// window.addEventListener('scroll', ()=> {
+//   box = element.getBoundingClientRect();
+
+//   if(box.top > pos){
+//       requestAnimationFrame(writeLayout);
+//   }
+// });
+  
+  useEffect(() => {
+    console.log(window.scrollHeight)
+    const watcher = scrollMonitor.create(workContainer, 1000);
+    watcher.enterViewport(() => {
+      // window.addEventListener('scroll', () => {
+
+      // })
+      requestAnimationFrame(() => {
+        window.addEventListener('scroll', parallaxShift);
+        return () => removeEventListener('scroll', parallaxShift)
+      })
     })
   }, [])
 
 
   return(
-    <div className="home__works">
+    <div ref={element => workContainer = element} className="home__works">
       <div className="layout">
         <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 6}px)`}}>
           <h2 className="home__work__title">nike</h2>

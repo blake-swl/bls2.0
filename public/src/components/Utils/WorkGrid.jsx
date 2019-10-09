@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import './styles/workGrid.scss';
-import Parallax from './ParallaxAnimation';
 
 
 const WorkGrid = (props) => {

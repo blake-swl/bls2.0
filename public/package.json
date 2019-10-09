@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "gsap": "^2.1.3",
-    "react-transition-group": "1.x"
+    "react-transition-group": "1.x",
+    "scrollmonitor": "^1.2.4"
   }
 }

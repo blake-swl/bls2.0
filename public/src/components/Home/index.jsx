@@ -9,10 +9,10 @@ import Services from './Home__Services';
 
 const Home = () => (
   <div>
-    {/* <Landing /> */}
+    <Landing />
     <Works />
-    {/* <Transition />
-    <Services/> */}
+    <Transition />
+    <Services/>
   </div>
 )
 export default Home;
