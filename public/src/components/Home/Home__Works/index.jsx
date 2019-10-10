@@ -22,38 +22,27 @@ import hiker from '../../../../dist/assets/hiker.jpeg';
 
 const Works = () => {
   const [offset, shiftOffset] = useState(0);
-  const parallaxShift = () => shiftOffset(window.scrollY)
   let workContainer = useRef(null);
   
-
-
-// window.addEventListener('scroll', ()=> {
-//   box = element.getBoundingClientRect();
-
-//   if(box.top > pos){
-//       requestAnimationFrame(writeLayout);
-//   }
-// });
-  
   useEffect(() => {
-    console.log(window.scrollHeight)
-    const watcher = scrollMonitor.create(workContainer, 1000);
-    watcher.enterViewport(() => {
-      // window.addEventListener('scroll', () => {
-
-      // })
-      requestAnimationFrame(() => {
-        window.addEventListener('scroll', parallaxShift);
-        return () => removeEventListener('scroll', parallaxShift)
-      })
+    let offsetTop = workContainer.offsetTop;
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(() => shiftOffset(window.scrollY - offsetTop))
     })
+
   }, [])
+
+//     requestAnimationFrame(() => {
+//       window.addEventListener('scroll', parallaxShift);
+//       return () => removeEventListener('scroll', parallaxShift)
+//     })
+
 
 
   return(
     <div ref={element => workContainer = element} className="home__works">
       <div className="layout">
-        <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 6}px)`}}>
+        <div className="layout__item layout__item--body" style={{transform: `translate3d(0, ${offset / 6}px, 0)`}}>
           <h2 className="home__work__title">nike</h2>
           <Button buttonText="View project" />
         </div>
@@ -62,7 +51,7 @@ const Works = () => {
         </div>
       </div>
       <div className="layout">
-        <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 12}px)`}}>
+        <div className="layout__item layout__item--body" style={{transform: `translate3d(0, ${offset / 12}px, 0)`}}>
           <h2 className="home__work__title">trail finder</h2>
           <Button buttonText="View project" />
         </div>
@@ -71,7 +60,7 @@ const Works = () => {
         </div>
       </div>
       <div className="layout">
-        <div className="layout__item layout__item--body" style={{transform: `translateY(${offset / 18}px)`}}>
+        <div className="layout__item layout__item--body" style={{transform: `translateY(0, ${offset / 18}px, 0)`}}>
           <h2 className="home__work__title">spotify</h2>
           <Button buttonText="View project" />
         </div>

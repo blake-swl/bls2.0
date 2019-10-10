@@ -7,7 +7,7 @@ const WorkGrid = (props) => {
   
   const paraCoor = {
     img1: (props.shift / - 12),
-    img2: (props.shift / - 8),
+    img2: (props.shift / - 6),
     img3: (props.shift / - 20),
   }
 
