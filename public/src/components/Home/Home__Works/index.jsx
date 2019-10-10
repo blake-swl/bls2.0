@@ -26,23 +26,30 @@ const Works = () => {
   
   useEffect(() => {
     let offsetTop = workContainer.offsetTop;
+    console.log(offsetTop)
     window.addEventListener('scroll', () => {
       requestAnimationFrame(() => shiftOffset(window.scrollY - offsetTop))
     })
 
   }, [])
 
-//     requestAnimationFrame(() => {
-//       window.addEventListener('scroll', parallaxShift);
-//       return () => removeEventListener('scroll', parallaxShift)
-//     })
+  const animation = {
+    body1: {
+      transform: `translate3d(0, ${offset / 6}px, 0)`,
+      transition:  "transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+    },
+    body3: {
+      transform: `translate3d(0, ${offset / 18}px, 0)`,
+      transition:  "transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+    }
+  }
 
 
 
   return(
     <div ref={element => workContainer = element} className="home__works">
       <div className="layout">
-        <div className="layout__item layout__item--body" style={{transform: `translate3d(0, ${offset / 6}px, 0)`}}>
+        <div className="layout__item layout__item--body" style={animation.body1}>
           <h2 className="home__work__title">nike</h2>
           <Button buttonText="View project" />
         </div>
@@ -51,7 +58,7 @@ const Works = () => {
         </div>
       </div>
       <div className="layout">
-        <div className="layout__item layout__item--body" style={{transform: `translate3d(0, ${offset / 12}px, 0)`}}>
+        <div className="layout__item layout__item--body" style={animation.body1}>
           <h2 className="home__work__title">trail finder</h2>
           <Button buttonText="View project" />
         </div>
@@ -60,7 +67,7 @@ const Works = () => {
         </div>
       </div>
       <div className="layout">
-        <div className="layout__item layout__item--body" style={{transform: `translateY(0, ${offset / 18}px, 0)`}}>
+        <div className="layout__item layout__item--body" style={animation.body3}>
           <h2 className="home__work__title">spotify</h2>
           <Button buttonText="View project" />
         </div>
