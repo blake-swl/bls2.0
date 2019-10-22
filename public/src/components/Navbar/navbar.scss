@@ -42,14 +42,14 @@
   
   height: 100%;
 }
-.glitch::before {
+.glitch:hover::before {
   left: 2px;
   text-shadow: -1px 0 red;
   background: black;
   clip: rect(44px, 450px, 56px, 0);
   animation: noise-anim 2s infinite linear alternate-reverse;
 }
-.glitch::after {
+.glitch:hover::after {
   left: -2px;
   text-shadow: -1px 0 blue;
   background: black;

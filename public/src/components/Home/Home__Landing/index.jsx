@@ -51,10 +51,10 @@ const Landing = () => {
     <div className="landing">
       <img src={screen} className="landing__rect__svg" alt=""/>
       <div className="landing__parallax">
-        <img className="typography" src={typography} alt="" style={{transform: `translateY(${paraPos.img1}px)`}}/>
-        <img className="palette" src={palette} alt="" style={{transform: `translateY(${paraPos.img2}px)`}}/>
+        <img className="typography" src={typography} alt="" style={{transform: `translate3d(0, ${paraPos.img1}px, 0)`}}/>
+        <img className="palette" src={palette} alt="" style={{transform: `translate3d(0, ${paraPos.img2}px, 0)`}}/>
       </div>
-      <img className="landing__hero" src={hero} alt="" style={{top: offset / 12}}/>
+      <img className="landing__hero" src={hero} alt="" style={{transform: `translate3d(0, ${paraPos.img3}px, 0)`}}/>
       {overlayPicker()}
       <div className="mouse">
         <div className="mouse__text">scroll</div>

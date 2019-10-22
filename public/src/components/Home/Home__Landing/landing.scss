@@ -75,17 +75,19 @@
 }
 .landing__parallax {
   width: 100%;
+  height: 60%;
   position: relative;
   visibility: hidden;
 
   .typography {
     position: absolute;
     left: 15%;
-    top: -10%;
+    top: 0;
   }
   .palette {
     position: absolute;
     right: 15%;
+    bottom:0;
   }
 }
 
